@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>weather-dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+                
+                <form>
+                    <div class="form-group">
+                    <label>Search for a City</label>
+                    <input type="city" class="form-control" placeholder="Enter city"><button id="b" type = "submit">button</button>
+                    </div>
+            
+            </form>
+            </div>
+            <div class="row">
+                <ul>
+                        <li class="list-group-item list-group-item-info"><a id="li-1">Austin</a></li>
+                        <li class="list-group-item list-group-item-info"><a id="li-2">Chicago</a></li>
+                        <li class="list-group-item list-group-item-info"><a id="li-3">New York</a></li>
+                        <li class="list-group-item list-group-item-info"><a id="li-4">Orland</a></li>
+                        <li class="list-group-item list-group-item-info"><a id="li-5">San Francisco</a></li>
+                        <li class="list-group-item list-group-item-info"><a id="li-6">Seattle</a></li>
+                        <li class="list-group-item list-group-item-info"><a id="li-7">Denver</a></li>
+                        <li class="list-group-item list-group-item-info"><a id="li-8">Atlanta</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="col-md-8">
+            <div class="row">
+                    <div class="card">
+                            <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                            <div class="card-body">
+                              <h2 class="card-title" id="city-date"></h2><img id="wicon" src="" alt="Weather icon">
+                              <p class="card-text" id="main-temp"></p>
+                              <p class="card-text" id="main-humid"></p>
+                              <p class="card-text" id="wind-sppd"></p>
+                              <p class="card-text" id="sunset-time"></p> 
+                            </div>
+                     </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h2 class="card-title" id="date"></h2>
+                                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                                <p class="card-text" id="temp1"></p>
+                                <p class="card-text" id="humid1"></p>   
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-2">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h2 class="card-title" id="date"></h2>
+                                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                                <p class="card-text" id="temp2"></p>
+                                <p class="card-text" id="humid2"></p>   
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-2">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h2 class="card-title" id="date"></h2>
+                                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                                <p class="card-text" id="temp3"></p>
+                                <p class="card-text" id="humid3"></p>   
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-2">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h2 class="card-title" id="date"></h2>
+                                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                                <p class="card-text" id="temp4"></p>
+                                <p class="card-text" id="humid4"></p>   
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-2">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h2 class="card-title" id="date"></h2>
+                                <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
+                                <p class="card-text" id="temp5"></p>
+                                <p class="card-text" id="humid5"></p>   
+                            </div>
+                        </div>
+                </div>
+
+            </div>
+        </div>S
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
