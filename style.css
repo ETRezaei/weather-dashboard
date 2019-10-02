@@ -1,6 +1,24 @@
 .card {
     width: 100%;
+    border: none;
 }
 #header {
     text-align: center;
+    background-color: #01579b;
+    height: 100px;
+    padding-top: 17px;
+}
+#searchContainer {
+    padding-left: 55px;
+}
+.days {
+    background-color: aqua;
+    margin: 10px;
+    width: 150px;
+    height: 200px;
+    font-size: 14px;
+    padding: 10px;
+}
+#input {
+    width: 70px;
 }

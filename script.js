@@ -1,4 +1,4 @@
-let city = "";
+let city = "Los Angeles";
 let apiKey = "90c33975c2007dd9981fa7016cb6641e";
 
 let cities = ["New York", "Chicago", "Denver"];
@@ -27,10 +27,11 @@ function getWeather(userPickedCity){
         let iconCode = weather[0].icon;
         let iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
         let date = moment().format('MMMM Do YYYY');
+        let tempF = (response.main.temp -273.15) * 9/5 +32;
         
         $("#wicon").attr("src", iconUrl);
         $("#city-date").text(response.name + " " + date);
-        $("#main-temp").text("Temperature: " + response.main.temp);
+        $("#main-temp").text("Temperature: " + tempF.toFixed(1) + " F") ;
         $("#main-humid").text("Humidity: " + response.main.humidity + " %");
         $("#wind-sppd").text( "Wind Speed: " + response.wind.speed + " MPH");
     })
@@ -47,21 +48,21 @@ function getWeather(userPickedCity){
         let weather = main[0].weather;
         let iconCode = weather[0].icon;
         let iconUrl = "http://openweathermap.org/img/w/" + iconCode + ".png";
+        
        
         // $("#sunset-time").text("Sunset Time: " + response.city.sunset);
         let counter = 1;
         for(let i = 7; i <= 39; i+=8){
             let info = response.list[i];
+            let tempF = (info.main.temp -273.15) * 9/5 +32;
             $("#date" + counter).text(info.dt_txt.split(" ", 1));
             $("#wicon" + counter).attr("src", iconUrl);
-            $("#temp" + counter).text("Temperature:" + info.main.temp);          
+            $("#temp" + counter).text("Temperature: " + tempF.toFixed(1) + " F");          
             $("#humid" + counter).text("Humidity: " + info.main.humidity + " %");
             counter ++;
 
         }
-
-
-
+       
     })
 }
 $(".list-group-item-info").on("click", function(){
@@ -80,4 +81,6 @@ $("#b").on("click", function(event){
     $("#city").append(newLi);
 
 })
+
+getWeather(city);
 
