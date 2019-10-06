@@ -1,7 +1,10 @@
-let city = "Los Angeles";
+let city= "Los Angeles";
 let apiKey = "90c33975c2007dd9981fa7016cb6641e";
-
-let cities = ["New York", "Chicago", "Denver"];
+let cityV = localStorage.getItem("cityK");
+if(cityV == null){
+    cityV = "Los Angeles";
+}
+let cities = cityV.split(",");
 $.each(cities,function(i,v){
     let newLi = $("<li>");
     let newBtn = $("<a>");
@@ -65,21 +68,31 @@ function getWeather(userPickedCity){
        
     })
 }
-$(".list-group-item-info").on("click", function(){
-    city = $(this).text();
-    getWeather(city);
-})
+
 $("#b").on("click", function(event){
     event.preventDefault();
-    city = $("#input").val();
-    getWeather(city);
-    let newbutton = $("<a>");
-    let newLi = $("<li>");
-    newbutton.append(city);
-    newLi.append(newbutton);
-    newLi.attr("class","list-group-item list-group-item-info");
-    $("#city").append(newLi);
+   
+        city = $("#input").val();
+        getWeather(city);
+    if(!cities.includes(city)){
+        cities.push(city);
+        let newbutton = $("<a>");
+        let newLi = $("<li>");
+        newbutton.append(city);
 
+        newLi.append(newbutton);
+        newLi.attr("class","list-group-item list-group-item-info");
+        $("#city").append(newLi);
+        
+    
+    }
+    localStorage.setItem("cityK",cities.toString());
+
+
+})
+$("body").on("click",".list-group-item-info",function(){
+    city = $(this).text();
+    getWeather(city);
 })
 
 getWeather(city);
